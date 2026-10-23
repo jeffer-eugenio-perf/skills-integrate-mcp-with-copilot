@@ -8,6 +8,24 @@
   </head>
   <body>
     <header>
+      <div class="teacher-auth">
+        <button id="login-button" type="button" aria-expanded="false" aria-controls="login-form">
+          Teacher Login
+        </button>
+        <button id="logout-button" class="hidden" type="button">Log Out</button>
+        <form id="login-form" class="hidden">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit">Log In</button>
+          <p id="auth-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
@@ -23,6 +41,7 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
+        <p id="signup-access-message">Teacher login is required to manage activity signups.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>

@@ -16,6 +16,7 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
@@ -24,7 +25,32 @@ header {
   border-radius: 5px;
 }
 
+.teacher-auth {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: left;
+}
+
+#login-form {
+  position: absolute;
+  z-index: 1;
+  top: 44px;
+  right: 0;
+  width: min(280px, calc(100vw - 64px));
+  padding: 16px;
+  color: #333;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#auth-message {
+  margin-top: 10px;
+}
+
 header h1 {
+  padding: 12px 100px 0;
   margin-bottom: 10px;
 }
 
@@ -81,28 +107,22 @@ section h3 {
   border-top: 1px dashed #ccc;
 }
 
-.participants-section h5 {
+.participants-container h5 {
   margin-bottom: 8px;
   color: #1a237e;
   font-size: 16px;
 }
 
-.participants-section ul {
+.participants-container ul {
   list-style-type: none;
   padding-left: 5px;
 }
 
-.participants-section ul li {
+.participants-container ul li {
   padding: 4px 0;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-/* Remove the bullet point pseudo-element */
-.participants-section ul li::before {
-  display: none;
 }
 
 .participant-email {
@@ -111,23 +131,16 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
-  border-radius: 3px;
+  background-color: #c62828;
 }
 
-.delete-btn:hover {
-  background-color: #ffebee;
-}
-
-.participants-section p {
+.participants-container p {
   color: #777;
   font-style: italic;
+}
+
+#signup-access-message {
+  margin-bottom: 15px;
 }
 
 .form-group {
@@ -164,6 +177,15 @@ button:hover {
   background-color: #3949ab;
 }
 
+.teacher-auth button {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #8e0000;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -190,6 +212,12 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 520px) {
+  header h1 {
+    padding-top: 48px;
+  }
 }
 
 footer {
